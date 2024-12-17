@@ -33,21 +33,34 @@ myLibrary.forEach((book) => {
     const card = document.createElement("div");
     card.classList.add("card");
     container.prepend(card);
+
     const title = document.createElement("p");
     title.classList.add("title");
     card.appendChild(title);
     title.textContent = book.title;
+
     const author = document.createElement("p");
     author.classList.add("author");
     card.appendChild(author);
     author.textContent = `by ${book.author}`;
+
     const pages = document.createElement("p");
     pages.classList.add("pages");
     card.appendChild(pages);
     pages.textContent = `${book.pages} pages`;
+
     const read = document.createElement("p");
     read.classList.add("read");
     card.appendChild(read);
     read.textContent = `${book.read === true ? "read" : "not read"}`;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-button");
+    card.appendChild(deleteButton);
+    deleteButton.textContent = "╳";
+
+    deleteButton.addEventListener("click", () => {
+        container.removeChild(card);
+      });
 });
 
