@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <h1>My Library</h1>
-    <div id="container">
-        <button class="add-btn">
-            <img id="add-book" src="media/book-plus.svg" alt="add-book" width="50px">
-        </button>
-    </div>
-    <dialog>
-        <button id="cls-btn" class="delete-button" autofocus></button>
-        <p>This modal dialog has a groovy backdrop!</p>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="script.js" defer></script>
+   </head>
+   <body>
+      <h1>My Library</h1>
+      <div id="container">
+         <button class="add-btn">
+         <img id="add-book" src="media/book-plus.svg" alt="add-book" width="50px">
+         </button>
+      </div>
+      <dialog>
+         <button id="cls-btn" class="delete-button" autofocus></button>
+         <p>Add new book</p>
+         <form action="" method="get">
+            <div class="grid-container">
+               <label for="name">Name: </label>
+               <input type="text" name="name" id="name">
+               <label for="author">Author: </label>
+               <input type="text" name="author" id="author">
+               <label for="pages">Number of pages:</label>
+               <input type="text" name="pages" id="pages" inputmode="numeric">
+               <label for="read">Have you read this book?</label>
+               <input type="checkbox" name="read" id="read">
+               <button type="submit">Add book</button>
+            </div>
+         </form>
       </dialog>
-</body>
+   </body>
 </html>

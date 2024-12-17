@@ -13,6 +13,7 @@ h1 {
 body {
     height: 100vh;
     background-color: #E2E8F0;
+    font-family:Georgia, 'Times New Roman', Times, serif
 }
 
 #container {
@@ -71,3 +72,24 @@ body {
    color: gray
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+dialog {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+dialog p:first-of-type {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+dialog button {
+    grid-column: 1 / 3;
+    padding: 5px;
+}
