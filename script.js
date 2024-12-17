@@ -57,10 +57,20 @@ myLibrary.forEach((book) => {
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
     card.appendChild(deleteButton);
-    deleteButton.textContent = "╳";
+    deleteButton.textContent = "";
 
     deleteButton.addEventListener("click", () => {
         container.removeChild(card);
       });
 });
 
+const dialog = document.querySelector("dialog");
+
+
+document.querySelector(".add-btn").addEventListener("click", () => {
+    dialog.showModal();
+})
+
+document.querySelector("#cls-btn").addEventListener("click", () => {
+    dialog.close();
+})

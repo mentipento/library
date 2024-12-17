@@ -63,6 +63,11 @@ body {
     right: 10px;
 }
 
+.delete-button::after {
+    content: "╳";
+}
+
 .delete-button:hover {
    color: gray
 }
+
