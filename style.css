@@ -162,7 +162,11 @@ body {
 }
 
 dialog .delete-button {
-	color: gray;
+	color: var(--primary-color);
+}
+
+dialog .delete-button:hover {
+	color: #9c152c81;
 }
 
 dialog {
