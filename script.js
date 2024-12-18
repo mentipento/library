@@ -29,10 +29,11 @@ addBookToLibrary(prideAndPrejudice);
 
 const container = document.querySelector("#container")
 
-myLibrary.forEach((book) => {
+
+    function createBookCard(book) {
     const card = document.createElement("div");
     card.classList.add("card");
-    container.prepend(card);
+    container.append(card);
 
     const title = document.createElement("p");
     title.classList.add("title");
@@ -62,7 +63,9 @@ myLibrary.forEach((book) => {
     deleteButton.addEventListener("click", () => {
         container.removeChild(card);
       });
-});
+};
+
+myLibrary.forEach((book) => createBookCard(book))
 
 const dialog = document.querySelector("dialog");
 
@@ -89,6 +92,13 @@ document.querySelector("#form").addEventListener("submit", (event) => {
 
     const readInput = document.querySelector("#read").value;
     console.log("Read:", readInput);
+
+    const newBook = new Book(nameInput, authorInput, pagesInput, readInput);
+    addBookToLibrary(newBook);
+
+    createBookCard(newBook);
+
+    document.querySelector("#form").reset();
 
     dialog.close();
 }
