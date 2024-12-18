@@ -23,9 +23,13 @@
 
 h1 {
     text-align: center;
-    background-color: white;
     padding: 10px;
     margin: 0;
+    color: #FDEC9B;
+    background-color: #9c152cc6;
+    width: 800px;
+    margin: 0 auto;
+
 }
 
 body {
@@ -39,11 +43,14 @@ body {
 #container {
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
 
 .flex-container {
     display: flex;
     justify-content: center;
+    gap: 20px;
+
 }
 
 .card {
@@ -58,7 +65,24 @@ body {
     border-left: 10px solid #FDEC9B;
     position: relative;
     color: #FDEC9B;
+    text-align: center;
 }
+
+/* Book effect: I used "pile"-effect from this website: https://html-css-js.com/css/generator/box-shadow/ */
+
+.card {
+    -webkit-box-shadow: 5px 5px 0px 0px #F5F5F5, 
+                        10px 10px 0px 0px #EDEDED, 
+                        15px 15px 0px 0px #E5E5E5, 
+                        20px 20px 0px 0px #DDDDDD, 
+                        25px 25px 0px 0px #D5D5D5, 
+                        48px 50px 15px 5px rgba(0,0,0,0); 
+
+    box-shadow: 5px 5px 0px 0px #F5F5F5, 
+                10px 10px 0px 0px #EDEDED, 
+            
+}
+
 
 .card .title {
     font-family: charmonmanbold;
@@ -83,7 +107,7 @@ body {
 }
 
 #add-book:hover {
-    content: url("media/book-plus-hover.svg");
+    content: url("media/plus-box-hover.svg");
 }
 
 .delete-button {
@@ -100,7 +124,7 @@ body {
 }
 
 .delete-button:hover {
-   color: #ebce3d
+   color: #fded9bb4
 }
 
 .grid-container {
