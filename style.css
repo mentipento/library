@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'charmonmanbold';
+    src: url('fonts/Charmoman/charmonman-bold-webfont.woff2') format('woff2'),
+         url('fonts/Charmoman/charmonman-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'charmonmanregular';
+    src: url('fonts/Charmoman/charmonman-regular-webfont.woff2') format('woff2'),
+         url('fonts/Charmoman/charmonman-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 * {
     box-sizing: border-box;
     /* border: 1px solid red; */
@@ -23,21 +41,32 @@ body {
     justify-content: center;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
 .card {
     margin: 5px;
     width: 200px;
     height: 250px;
     word-break: break-word;
-    background-color: white;
+    background-color: #9C152C;
     padding: 30px 20px;
     margin: 20px 10px;
     border-radius: 10px;
-    border-left: 10px solid #4d7ef9;
+    border-left: 10px solid #FDEC9B;
     position: relative;
+    color: #FDEC9B;
 }
 
-.title {
-    font-weight: bold;
+.card .title {
+    font-family: charmonmanbold;
+    font-size: large;
+}
+
+.card .author {
+    font-style: italic;
 }
 
 .add-btn {
@@ -63,6 +92,7 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
+    color: #FDEC9B;
 }
 
 .delete-button::after {
@@ -70,7 +100,7 @@ body {
 }
 
 .delete-button:hover {
-   color: gray
+   color: #ebce3d
 }
 
 .grid-container {
@@ -93,4 +123,8 @@ dialog p:first-of-type {
 dialog button {
     grid-column: 1 / 3;
     padding: 5px;
+}
+
+dialog .delete-button {
+    color: gray;
 }

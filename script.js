@@ -50,10 +50,26 @@ const container = document.querySelector("#container")
     card.appendChild(pages);
     pages.textContent = `${book.pages} pages`;
 
-    const read = document.createElement("p");
-    read.classList.add("read");
-    card.appendChild(read);
-    read.textContent = `${book.read === true ? "read" : "not read"}`;
+    const readContainer = document.createElement("div");
+    readContainer.classList.add("read-container");
+    
+    // Checkbox erstellen
+    const readInput = document.createElement("input");
+    readInput.type = "checkbox";
+    readInput.id = `read-${book.title}`;
+    readInput.checked = book.read;
+    
+    // Label erstellen
+    const readLabel = document.createElement("label");
+    readLabel.textContent = "Read";
+    readLabel.htmlFor = `read-${book.title}`;
+    
+    // Checkbox und Label zur Karte hinzufügen
+    readContainer.appendChild(readInput);
+    readContainer.appendChild(readLabel);
+    card.appendChild(readContainer);
+    
+    
 
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
