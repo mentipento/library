@@ -93,6 +93,12 @@ body {
     font-style: italic;
 }
 
+.card input[type="checkbox"] {
+    accent-color: #9C152C;
+    vertical-align: -1px
+  }
+  
+
 .add-btn {
     align-self: center;
     background-color: rgba(255, 255, 255, 0);
@@ -149,6 +155,36 @@ body {
     padding: 5px;
 }
 
+#delete-book-dialog {
+    text-align: center;
+}
+
 dialog .delete-button {
     color: gray;
+}
+
+dialog {
+    background-color: #FDEC9B;
+}
+
+dialog button {
+    background-color: #9C152C;
+    color : white;
+    border: 1px solid #9C152C;
+    font-family: inherit;
+    padding: 4px 6px;
+    font-size: inherit;
+}
+
+dialog button[type="submit"]:hover {
+    background-color: white;
+    color: black;
+}
+
+dialog input:focus {
+    outline: 1px solid #9C152C;
+}
+
+dialog input[type="radio"] {
+    accent-color: #9C152C;
 }
