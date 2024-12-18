@@ -1,190 +1,192 @@
+:root {
+	--primary-color: #9C152C;
+	--secondary-color: #FDEC9B;
+}
+
 @font-face {
-    font-family: 'charmonmanbold';
-    src: url('fonts/Charmoman/charmonman-bold-webfont.woff2') format('woff2'),
-         url('fonts/Charmoman/charmonman-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'charmonmanbold';
+	src: url('fonts/Charmoman/charmonman-bold-webfont.woff2') format('woff2'),
+		url('fonts/Charmoman/charmonman-bold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'charmonmanregular';
-    src: url('fonts/Charmoman/charmonman-regular-webfont.woff2') format('woff2'),
-         url('fonts/Charmoman/charmonman-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'charmonmanregular';
+	src: url('fonts/Charmoman/charmonman-regular-webfont.woff2') format('woff2'),
+		url('fonts/Charmoman/charmonman-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 
 }
 
 * {
-    box-sizing: border-box;
-    /* border: 1px solid red; */
+	box-sizing: border-box;
+	/* border: 1px solid red; */
 }
 
 h1 {
-    text-align: center;
-    padding: 10px;
-    margin: 0;
-    color: #FDEC9B;
-    background-color: #9c152cc6;
-    width: 800px;
-    margin: 0 auto;
-
+	text-align: center;
+	margin: 0;
+	color: var(--secondary-color);
+	background-color: var(--primary-color);
+	width: 800px;
+	margin: 0 auto 20px;
+    box-shadow:  5px 5px 5px #000000;
+    font-family: charmonmanbold;
 }
 
 body {
-    height: 100vh;
-    background-color: #E2E8F0;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    background-image: url(media/pexels-technobulka-2908984.jpg);
-    background-size: contain;
+	height: 100vh;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	background-image: url(media/pexels-technobulka-2908984.jpg);
+	background-size: contain;
 }
 
 #container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
 }
 
 .flex-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
 
 }
 
 .card {
-    margin: 5px;
-    width: 200px;
-    height: 250px;
-    word-break: break-word;
-    background-color: #9C152C;
-    padding: 30px 20px;
-    margin: 20px 10px;
-    border-radius: 10px;
-    border-left: 10px solid #FDEC9B;
-    position: relative;
-    color: #FDEC9B;
-    text-align: center;
+	margin: 5px;
+	width: 200px;
+	height: 250px;
+	word-break: break-word;
+	background-color: var(--primary-color);
+	padding: 30px 20px;
+	margin: 20px 10px;
+	border-radius: 10px;
+	border-left: 10px solid var(--secondary-color);
+	position: relative;
+	color: var(--secondary-color);
+	text-align: center;
 }
 
 /* Book effect: I used "pile"-effect from this website: https://html-css-js.com/css/generator/box-shadow/ */
 
 .card {
-    -webkit-box-shadow: 5px 5px 0px 0px #F5F5F5, 
-                        10px 10px 0px 0px #EDEDED, 
-                        15px 15px 0px 0px #E5E5E5, 
-                        20px 20px 0px 0px #DDDDDD, 
-                        25px 25px 0px 0px #D5D5D5, 
-                        48px 50px 15px 5px rgba(0,0,0,0); 
+	-webkit-box-shadow: 5px 5px 0px 0px #F5F5F5,
+		10px 10px 0px 0px #EDEDED,
+		15px 15px 0px 0px #E5E5E5,
+		20px 20px 0px 0px #DDDDDD,
+		25px 25px 0px 0px #D5D5D5,
+		48px 50px 15px 5px rgba(0, 0, 0, 0);
 
-    box-shadow: 5px 5px 0px 0px #F5F5F5, 
-                10px 10px 0px 0px #EDEDED, 
-            
+	box-shadow: 5px 5px 0px 0px #F5F5F5,
+		10px 10px 0px 0px #EDEDED,
+
 }
 
-
 .card .title {
-    font-family: charmonmanbold;
-    font-size: large;
+	font-family: charmonmanbold;
+	font-size: large;
 }
 
 .card .author {
-    font-style: italic;
+	font-style: italic;
 }
 
 .card input[type="checkbox"] {
-    accent-color: #9C152C;
-    vertical-align: -1px
-  }
-  
-
-.add-btn {
-    align-self: center;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
+	accent-color: var(--primary-color);
+	vertical-align: -1px
 }
 
 .add-btn {
-    align-self: center;
-    background-color: rgba(255, 255, 255, 0);
-    padding: 0;
-    border: none;
+	align-self: center;
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+}
+
+.add-btn {
+	align-self: center;
+	background-color: rgba(255, 255, 255, 0);
+	padding: 0;
+	border: none;
 }
 
 #add-book:hover {
-    content: url("media/plus-box-hover.svg");
+	content: url("media/plus-box-hover.svg");
 }
 
 .delete-button {
-    border: none;
-    background-color: transparent;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #FDEC9B;
+	border: none;
+	background-color: transparent;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: var(--secondary-color);
 }
 
 .delete-button::after {
-    content: "╳";
+	content: "╳";
 }
 
 .delete-button:hover {
-   color: #fded9bb4
+	color: #fded9bb4
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 5px;
 }
 
 #new-book-dialog {
-    border: 1px solid black;
-    padding: 20px;
+	border: 1px solid black;
+	padding: 20px;
 }
 
 #new-book-dialog p:first-of-type {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: bold;
 }
 
 #new-book-dialog button {
-    grid-column: 1 / 3;
-    padding: 5px;
+	grid-column: 1 / 3;
+	padding: 5px;
 }
 
 #delete-book-dialog {
-    text-align: center;
+	text-align: center;
 }
 
 dialog .delete-button {
-    color: gray;
+	color: gray;
 }
 
 dialog {
-    background-color: #FDEC9B;
+	background-color: var(--secondary-color);
 }
 
 dialog button {
-    background-color: #9C152C;
-    color : white;
-    border: 1px solid #9C152C;
-    font-family: inherit;
-    padding: 4px 6px;
-    font-size: inherit;
+	background-color: var(--primary-color);
+	color: white;
+	border: 1px solid var(--primary-color);
+	font-family: inherit;
+	padding: 4px 6px;
+	font-size: inherit;
 }
 
 dialog button[type="submit"]:hover {
-    background-color: white;
-    color: black;
+	background-color: white;
+	color: black;
 }
 
 dialog input:focus {
-    outline: 1px solid #9C152C;
+	outline: 1px solid var(--primary-color);
 }
 
 dialog input[type="radio"] {
-    accent-color: #9C152C;
+	accent-color: var(--primary-color);
 }
