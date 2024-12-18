@@ -74,3 +74,22 @@ document.querySelector(".add-btn").addEventListener("click", () => {
 document.querySelector("#cls-btn").addEventListener("click", () => {
     dialog.close();
 })
+
+document.querySelector("#form").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const nameInput = document.querySelector("#name").value;
+    console.log("Book title:", nameInput);
+
+    const authorInput = document.querySelector("#author").value;
+    console.log("Author:", authorInput);
+
+    const pagesInput = document.querySelector("#pages").value;
+    console.log("Number of pages:", pagesInput);
+
+    const readInput = document.querySelector("#read").value;
+    console.log("Read:", readInput);
+
+    dialog.close();
+}
+)

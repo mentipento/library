@@ -13,7 +13,9 @@ h1 {
 body {
     height: 100vh;
     background-color: #E2E8F0;
-    font-family:Georgia, 'Times New Roman', Times, serif
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-image: url(media/pexels-technobulka-2908984.jpg);
+    background-size: contain;
 }
 
 #container {
@@ -32,7 +34,6 @@ body {
     border-radius: 10px;
     border-left: 10px solid #4d7ef9;
     position: relative;
-
 }
 
 .title {
