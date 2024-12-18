@@ -133,18 +133,18 @@ body {
     gap: 5px;
 }
 
-dialog {
+#new-book-dialog {
     border: 1px solid black;
     padding: 20px;
 }
 
-dialog p:first-of-type {
+#new-book-dialog p:first-of-type {
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-dialog button {
+#new-book-dialog button {
     grid-column: 1 / 3;
     padding: 5px;
 }

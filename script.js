@@ -76,14 +76,29 @@ const container = document.querySelector("#container")
     card.appendChild(deleteButton);
     deleteButton.textContent = "";
 
+    const newBookDialog = document.querySelector("#delete-book-dialog");
+
     deleteButton.addEventListener("click", () => {
-        container.removeChild(card);
-      });
+        bookToDelete = card;
+        newBookDialog.showModal();
+    });
+
+      document.querySelector(".delete-book-no").addEventListener("click", () => {
+        newBookDialog.close();
+    });
+
+    document.querySelector("#delete-book-yes").addEventListener("click", () => {
+        if (bookToDelete) {
+            container.removeChild(bookToDelete);
+            bookToDelete = null; // Rücksetzen nach dem Löschen
+        }
+        newBookDialog.close();
+    });
 };
 
 myLibrary.forEach((book) => createBookCard(book))
 
-const dialog = document.querySelector("dialog");
+const dialog = document.querySelector("#new-book-dialog");
 
 
 document.querySelector(".add-btn").addEventListener("click", () => {
