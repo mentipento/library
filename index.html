@@ -1,31 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>My little library 📚</h1>
     <div class="flex-container">
-        <div id="container"> </div> <button class="add-btn"> <img id="add-book" src="media/plus-box.svg" alt="add-book" width="50px"> </button>
+      <div id="container"></div>
+      <button class="add-btn">
+        <img
+          id="add-book"
+          src="media/plus-box.svg"
+          alt="add-book"
+          width="50px"
+        />
+      </button>
     </div>
     <dialog id="delete-book-dialog">
-        <p>Delete book?</p> <button type="submit" id="delete-book-yes">Yes</button> <button type="submit" class="delete-book-no">No</button>
+      <p>Delete book?</p>
+      <button type="submit" id="delete-book-yes">Yes</button>
+      <button type="submit" class="delete-book-no">No</button>
     </dialog>
-    <dialog id="new-book-dialog"> <button id="cls-btn" class="delete-button" autofocus></button>
-        <p>Add new book</p>
-        <form id="form" action="" method="get">
-            <div class="grid-container"> <label for="name">Name: </label> <input type="text" name="name" id="name" required> <label for="author">Author: </label> <input type="text" name="author" id="author" required> <label for="pages">Number of pages:</label> <input type="text" name="pages" id="pages" inputmode="numeric" required>
-                <div>Have you read this book?</div>
-                <div> <input type="radio" name="read" id="read" value="true" required> <label for="read">Yes</label> <input type="radio" name="read" id="not-read" value="false" required> <label for="not-read">No</label> </div> <button type="submit">Add book</button>
-            </div>
-        </form>
+    <dialog id="new-book-dialog">
+      <button id="cls-btn" class="delete-button" autofocus></button>
+      <p>Add new book</p>
+      <form id="form" action="" method="get">
+        <div class="grid-container">
+          <label for="name">Name: </label>
+          <input type="text" name="name" id="name" required />
+          <label for="author">Author: </label>
+          <input type="text" name="author" id="author" required />
+          <label for="pages">Number of pages:</label>
+          <input
+            type="text"
+            name="pages"
+            id="pages"
+            inputmode="numeric"
+            pattern="^\d+$"
+            required
+          />
+          <div>Have you read this book?</div>
+          <div>
+            <input type="radio" name="read" id="read" value="true" required />
+            <label for="read">Yes</label>
+            <input
+              type="radio"
+              name="read"
+              id="not-read"
+              value="false"
+              required
+            />
+            <label for="not-read">No</label>
+          </div>
+          <button type="submit" id="submit-button">Add book</button>
+        </div>
+      </form>
     </dialog>
-</body>
-
+  </body>
 </html>

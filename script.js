@@ -1,120 +1,169 @@
-const myLibrary = [];
+const init = (function init() {
+  const myLibrary = [];
 
-class Book {
+  class Book {
     constructor(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+      this.title = title;
+      this.author = author;
+      this.pages = pages;
+      this.read = read;
     }
+
     info() {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read === true ? "read" : "not read yet"}`;
-    };
-}
+      return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read === true ? 'read' : 'not read yet'}`;
+    }
+  }
 
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
-const mobyDick = new Book("Moby Dick", "Herman Melville", 302, true);
-const prideAndPrejudice = new Book("Pride and Prejudice", "Jane Austen", 279, false);
-const warAndPeace = new Book("War and Peace", "Leo Tolstoy", 1225, false);
-const greatExpectations = new Book("Great Expectations", "Charles Dickens", 505, false);
-const ulysses = new Book("Ulysses", "James Joyce", 730, false);
-const crimeAndPunishment = new Book("Crime and Punishment", "Fyodor Dostoevsky", 671, true);
+  const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, true);
+  const mobyDick = new Book('Moby Dick', 'Herman Melville', 302, true);
+  const prideAndPrejudice = new Book(
+    'Pride and Prejudice',
+    'Jane Austen',
+    279,
+    false,
+  );
+  const warAndPeace = new Book('War and Peace', 'Leo Tolstoy', 1225, false);
+  const greatExpectations = new Book(
+    'Great Expectations',
+    'Charles Dickens',
+    505,
+    false,
+  );
+  const ulysses = new Book('Ulysses', 'James Joyce', 730, false);
+  const crimeAndPunishment = new Book(
+    'Crime and Punishment',
+    'Fyodor Dostoevsky',
+    671,
+    true,
+  );
 
-function addBookToLibrary(book) {
+  function addBookToLibrary(book) {
     myLibrary.push(book);
-}
+  }
 
-addBookToLibrary(theHobbit);
-addBookToLibrary(mobyDick);
-addBookToLibrary(prideAndPrejudice);
+  addBookToLibrary(theHobbit);
+  addBookToLibrary(mobyDick);
+  addBookToLibrary(prideAndPrejudice);
 
-const container = document.querySelector("#container");
+  const container = document.querySelector('#container');
 
-function createBookCard(book) {
-    const card = document.createElement("div");
-    card.classList.add("card");
+  function createBookCard(book) {
+    const card = document.createElement('div');
+    card.classList.add('card');
     container.append(card);
 
-    const title = document.createElement("p");
-    title.classList.add("title");
+    const title = document.createElement('p');
+    title.classList.add('title');
     card.appendChild(title);
     title.textContent = book.title;
 
-    const author = document.createElement("p");
-    author.classList.add("author");
+    const author = document.createElement('p');
+    author.classList.add('author');
     card.appendChild(author);
     author.textContent = `by ${book.author}`;
 
-    const pages = document.createElement("p");
-    pages.classList.add("pages");
+    const pages = document.createElement('p');
+    pages.classList.add('pages');
     card.appendChild(pages);
     pages.textContent = `${book.pages} pages`;
 
-    const readContainer = document.createElement("div");
-    readContainer.classList.add("read-container");
+    const readContainer = document.createElement('div');
+    readContainer.classList.add('read-container');
 
-    const readInput = document.createElement("input");
-    readInput.type = "checkbox";
+    const readInput = document.createElement('input');
+    readInput.type = 'checkbox';
     readInput.id = `read-${book.title}`;
     readInput.checked = book.read;
 
-    const readLabel = document.createElement("label");
-    readLabel.textContent = "Read";
+    const readLabel = document.createElement('label');
+    readLabel.textContent = 'Read';
     readLabel.htmlFor = `read-${book.title}`;
 
     readContainer.appendChild(readInput);
     readContainer.appendChild(readLabel);
     card.appendChild(readContainer);
 
-    const deleteButton = document.createElement("button");
-    deleteButton.classList.add("delete-button");
-    deleteButton.textContent = "";
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete-button');
+    deleteButton.textContent = '';
     card.appendChild(deleteButton);
 
-    const newBookDialog = document.querySelector("#delete-book-dialog");
+    const newBookDialog = document.querySelector('#delete-book-dialog');
 
-    deleteButton.addEventListener("click", () => {
-        bookToDelete = card;
-        newBookDialog.showModal();
+    deleteButton.addEventListener('click', () => {
+      bookToDelete = card;
+      newBookDialog.showModal();
     });
 
-    document.querySelector(".delete-book-no").addEventListener("click", () => {
-        newBookDialog.close();
+    document.querySelector('.delete-book-no').addEventListener('click', () => {
+      newBookDialog.close();
     });
 
-    document.querySelector("#delete-book-yes").addEventListener("click", () => {
-        if (bookToDelete) {
-            container.removeChild(bookToDelete);
-            bookToDelete = null;
-        }
-        newBookDialog.close();
+    document.querySelector('#delete-book-yes').addEventListener('click', () => {
+      if (bookToDelete) {
+        container.removeChild(bookToDelete);
+        bookToDelete = null;
+      }
+      newBookDialog.close();
     });
-}
+  }
 
-myLibrary.forEach((book) => createBookCard(book));
+  myLibrary.forEach((book) => createBookCard(book));
 
-const dialog = document.querySelector("#new-book-dialog");
+  const dialog = document.querySelector('#new-book-dialog');
 
-document.querySelector(".add-btn").addEventListener("click", () => {
+  document.querySelector('.add-btn').addEventListener('click', () => {
     dialog.showModal();
-});
+  });
 
-document.querySelector("#cls-btn").addEventListener("click", () => {
+  document.querySelector('#cls-btn').addEventListener('click', () => {
     dialog.close();
-});
+  });
 
-document.querySelector("#form").addEventListener("submit", (event) => {
+  document.querySelector('#form').addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const nameInput = document.querySelector("#name").value;
-    const authorInput = document.querySelector("#author").value;
-    const pagesInput = document.querySelector("#pages").value;
-    const readInput = document.querySelector("#read").checked;
+    const [nameInput, authorInput, pagesInput] = ['name', 'author', 'pages'].map((id) => document.getElementById(id).value);
+
+    const readInput = document.querySelector('#read').checked;
 
     const newBook = new Book(nameInput, authorInput, pagesInput, readInput);
     addBookToLibrary(newBook);
     createBookCard(newBook);
 
-    document.querySelector("#form").reset();
+    document.querySelector('#form').reset();
     dialog.close();
+  });
+
+  const checkValidation = function checkValidation(input) {
+    if (input.validity.valueMissing) {
+      input.setCustomValidity('This field cannot be empty');
+      input.reportValidity();
+    } else if (input.validity.patternMismatch) {
+      input.setCustomValidity('Please enter a numeric value');
+      input.reportValidity();
+    } else {
+      input.setCustomValidity('');
+    }
+  };
+
+  const initValidation = (function initValidation() {
+    const [submitButton, name, author, pages, read] = [
+      'submit-button',
+      'name',
+      'author',
+      'pages',
+      'read',
+    ].map((id) => document.getElementById(id));
+
+    submitButton.addEventListener('click', () => {
+      [name, author, pages, read].forEach(checkValidation);
+    });
+
+    [name, author, pages].forEach((item) => {
+      item.addEventListener('input', () => checkValidation(item));
+    });
+  }());
 });
+
+init();
